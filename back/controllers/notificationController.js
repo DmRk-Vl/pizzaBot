@@ -3,6 +3,7 @@ const slackAPI = require('./../slackAPI.js');
 
 const web = slackAPI.web;
 
+//Отправляет уведомление о смене статуса пользователю.
 exports.sendNotification = async function(status, channelId) {
   await web.chat.postMessage({
     text: `Хей! Статус твоего заказа был изменен! \nНовый статус: ${convertStatusForUser(status)}.`,
@@ -10,6 +11,7 @@ exports.sendNotification = async function(status, channelId) {
   });
 };
 
+//Преобразует статус с латиницы на кириллицу.
 function convertStatusForUser(status) {
   switch (status) {
     case "rejected": {

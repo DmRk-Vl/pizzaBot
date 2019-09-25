@@ -1,6 +1,7 @@
 const Order = require("../models/order.js");
 const notificationController = require ("./notificationController.js");
 
+//Отправляет клиенту весь список заказов из базы данных.
 exports.getOrders = function(request, response){
   Order.find({}, function(err, result){
     if(err){
@@ -11,6 +12,7 @@ exports.getOrders = function(request, response){
   });
 };
 
+//Изменяет статус заказа и отправляет новый вариант.
 exports.putOrder = function(request, response){
   if(!request.body){
     return response.sendStatus(400);
@@ -32,5 +34,6 @@ exports.putOrder = function(request, response){
       response.send(result)
   });
 
+  //Отправляем уведомление о смене статуса пользователю.
   notificationController.sendNotification(status, channelId);
 }
