@@ -1,0 +1,27 @@
+<h2>Список заказов</h2>
+<table>
+  <thead>
+    <tr>
+      <th>_id</th>
+      <th>Name</th>
+      <th>Size</th>
+      <th>Adress</th>
+      <th class="status">Status</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    <tr>
+  </thead>
+  <tbody *ngFor="let order of orders">
+    <tr>
+      <td>{{order._id}}</td>
+      <td>{{order.pizzaName}}</td>
+      <td>{{order.pizzaSize}}</td>
+      <td>{{order.adress}}</td>
+      <td>{{convertStatusForUser(order.status)}}</td>
+      <td class="btn confirm"><a (click)="setOrderStatus(order._id, 'confirmed', order.channelId)">Подтвердить</a></td>
+      <td class="btn reject"><a (click)="setOrderStatus(order._id, 'rejected', order.channelId)">Отклонить</a></td>
+      <td class="btn complete"><a (click)="setOrderStatus(order._id, 'completed', order.channelId)">Завершить</a></td>
+    </tr>
+  </tbody>
+</table>

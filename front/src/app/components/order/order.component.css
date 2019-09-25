@@ -1,0 +1,52 @@
+table {
+  background: white;
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+th {
+  font-weight: normal;
+  color: #003399;
+  padding: 15px 25px;
+}
+td {
+  color: #666699;
+  border-left: 1px solid #e8edff;
+  border-top: 1px solid #e8edff;
+  border-bottom: 1px solid #e8edff;
+  padding: 15px 25px;
+}
+
+tr:hover td {
+  color: #6699ff;
+  border-bottom: 3px solid #e8edff;
+}
+
+.btn {
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  padding: 15px 25px;
+}
+
+h2 {
+  color: #666699;
+  padding: 15px 25px;
+}
+
+.status {
+  min-width: 92px;
+}
+
+.confirm {
+  border-left: 3px solid #e8edff;
+}
+
+.complete:hover,
+.confirm:hover,
+.reject:hover {
+  background: #e8edff;
+}
