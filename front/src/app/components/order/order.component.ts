@@ -13,14 +13,15 @@ export class OrderComponent implements OnInit{
 
     constructor(private httpService: HttpService){}
 
+    //Получает список заказов.
     GetOrders() {
       this.httpService.getOrders().subscribe(data => {
         this.orders = data;
         console.log("data");
       });
-      //  this.orderList = this.rows(this.orders);
     }
 
+    //Устанавливает новый статус.
     setOrderStatus(id:string, status:string, channelId:string) {
       for (let i = 0; i < this.orders.length; i++){
         if (this.orders[i]._id == id){
@@ -32,6 +33,7 @@ export class OrderComponent implements OnInit{
       }
     }
 
+    //Преобразует статус заказа из латиницы в кириллицу.
     convertStatusForUser(status) {
       switch (status) {
         case "rejected": {
