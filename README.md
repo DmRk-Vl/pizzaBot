@@ -1,10 +1,10 @@
 # pizzaBot
 
 **Рекомендуемые требования:** 
-  OS:          linux x64, 18.04
-  Node.js:     12
-  Angular CLI: 8
-  MongoDB:     3
+  * OS:          linux x64, 18.04
+  * Node.js:     12
+  * Angular CLI: 8
+  * MongoDB:     3
     
 **Настройка бота на slack api:**
   Создать новое приложение на сайте https://api.slack.com/apps.
