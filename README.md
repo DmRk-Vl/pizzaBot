@@ -1,4 +1,4 @@
-# pizzaBots
+# pizzaBot
 
 **Рекомендуемые требования:** 
   OS:          linux x64, 18.04
